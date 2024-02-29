@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.absoluteOffset
 import androidx.compose.foundation.layout.absolutePadding
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -47,17 +48,33 @@ fun AfterSignUp(navController:NavController, modifier: Modifier) {
 
 @Composable
 fun TopBarAfterSignUp(navController: NavController){
-    Row(
-        horizontalArrangement = Arrangement.Center,
-        modifier = Modifier
-            .background(Color.Black)
-            .fillMaxWidth()
-    ){
-        Text(
-            text = stringResource(id = R.string.app_name),
-            color = Color.White,
-            textAlign = TextAlign.Center,
-            style = MaterialTheme.typography.headlineMedium
+    Column {
+        Row(
+            horizontalArrangement = Arrangement.Center,
+            modifier = Modifier
+                .background(Color.Black)
+                .fillMaxWidth()
+        ){
+            BackButtonFromParticipations {
+                navController.navigate("MYPROFILE")
+            }
+            Text(
+                text = stringResource(R.string.app_name),
+                color = Color.White,
+                textAlign = TextAlign.Center,
+                style = MaterialTheme.typography.headlineMedium,
+                modifier = Modifier
+                    .padding(top = 4.dp, bottom = 5.dp)
+                    .absoluteOffset(x = (-15).dp, y = 1.dp)
+            )
+        }
+        Image(
+            painter = painterResource(id = R.drawable.blue_line),
+            contentDescription = "Blue Line",
+            contentScale = ContentScale.Crop,
+            modifier = Modifier
+                .height(2.dp)
+                .fillMaxWidth()
         )
     }
 }

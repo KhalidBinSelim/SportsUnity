@@ -66,11 +66,6 @@ fun Login(mainActivityCallback: MainActivityCallback,navController: NavHostContr
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxWidth()
             )
-//            Image(
-//                painter = painterResource(id = R.drawable.sportsunity),
-//                contentDescription = null,
-//                modifier = Modifier.fillMaxSize()
-//            )
             Text(
                 text = stringResource(id = R.string.app_name),
                 style = MaterialTheme.typography.headlineLarge,
